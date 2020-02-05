@@ -36,12 +36,39 @@ Date.prototype.findDateValue = function () {
     dateValue += 334;
   }
   dateValue = (this.day + dateValue);
-  console.log(dateValue);
-  console.log(this.day);
   return dateValue;
 }
 
 
+Date.prototype.findWeekdayGroup = function () {
+  let findWeekdayGroup = ((this.findDateValue()%7)-1);
+    if (findWeekdayGroup == (-1)) {
+      findWeekdayGroup = 6;
+    } 
+  return findWeekdayGroup;
+}
 
-// var dayOfWeekNumber = ((dayNumber + dayOfMonth) % 7) - 1);
+Date.prototype.findWeekdayName = function () {
+  let findWeekdayGroup = (this.findWeekdayGroup());
+  let findWeekdayName = "";
+    if (findWeekdayGroup == 0) {
+      findWeekdayName = "Wednesday";
+    } else if (findWeekdayGroup == 1) {
+      findWeekdayName = "Thursday";
+    } else if (findWeekdayGroup == 2) {
+      findWeekdayName = "Friday";
+    } else if (findWeekdayGroup == 3) {
+      findWeekdayName = "Saturday";
+    } else if (findWeekdayGroup == 4) {
+      findWeekdayName = "Sunday";
+    } else if (findWeekdayGroup == 5) {
+      findWeekdayName = "Monday";
+    } else if (findWeekdayGroup == 6) {
+      findWeekdayName = "Tuesday";
+    }
+      return findWeekdayName;    
+}
+
+
+
 

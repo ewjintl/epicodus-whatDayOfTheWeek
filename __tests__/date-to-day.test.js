@@ -15,5 +15,16 @@ describe('Date', () => {
     expect(date.findDateValue()).toEqual(139);
   });
 
+  test('Take calculated day number, divide by 7, find remainder and subtract 1 from result.', () => {
+
+    let date = new Date(6, 17, 1800);
+    expect(date.findWeekdayGroup()).toEqual(6);
+  });
+  test('From the result being 0-6, ascribe Mon-Sun respectively.', () => {
+
+    let date = new Date(6, 18, 1800);
+    expect(date.findWeekdayName()).toEqual("Wednesday");
+  });
+
 });
 
