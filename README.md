@@ -24,7 +24,11 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 | Take calculated day number, divide by 7, find remainder and subtract 1 from result.| 139 | 5 |
 | If the above result is 0, then return 6 | dayNumber = 140 | return 6 |
 | From the result being 0-6, ascribe Mon-Sun respectively. | 6 | Sun |
-|
+| If year is between 1800-1803, add 0-3 respectively to dateValue | 1802 | dateValue += 2 |
+| Calculate if entered year is a leap year | 1804 | true | 
+| In common years the adjuster method is incremented up by one but in leap years it is incremented up by two, ultimately coming full circle every 28 years. |
+
+
 
 <!-- | Link day number to day of the week from "anchor date Wednesday January 1st| 01 | Thursday | -->
 <!-- |Take an entered date and determine whether it is a common or a leap year.|

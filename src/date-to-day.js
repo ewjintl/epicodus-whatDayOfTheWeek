@@ -9,7 +9,7 @@ export class Date {
 };
 
 Date.prototype.findDateValue = function () {
-  let dateValue = 0;
+  let dateValue = this.adjuster();
   if (this.month == 1) {
     dateValue += 0;
   } else if (this.month == 2) {
@@ -70,5 +70,27 @@ Date.prototype.findWeekdayName = function () {
 }
 
 
+Date.prototype.adjuster = function () {
+  let dateValue = (this.dateValue + (this.year - 1800));
+
+  // if (date.leapYearAdjust() == true ) {
+  //   this.dateValue += 2;
+  // } else if (date.leapYearAdjust() == false ) {
+  //   this.dateValue += 1;
+  // }
+  return dateValue;
+}
+
+// Date.prototype.leapYearAdjust = function () {
+//   if (this.year % 400 === 0) {
+//     return true;
+//   } else if (this.year % 100 === 0){
+//     return false;
+//   } else if (this.year % 4 === 0){
+//     return true
+//   } 
+//   return false;
+// }
 
 
+// The day for any date advances one day per year, two days in leap years. Leap years repeat every 28 years. Looping?

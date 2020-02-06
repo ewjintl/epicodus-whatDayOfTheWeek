@@ -16,15 +16,27 @@ describe('Date', () => {
   });
 
   test('Take calculated day number, divide by 7, find remainder and subtract 1 from result.', () => {
-
     let date = new Date(6, 17, 1800);
     expect(date.findWeekdayGroup()).toEqual(6);
   });
-  test('From the result being 0-6, ascribe Mon-Sun respectively.', () => {
 
+  test('From the result being 0-6, ascribe Mon-Sun respectively.', () => {
     let date = new Date(6, 18, 1800);
     expect(date.findWeekdayName()).toEqual("Wednesday");
   });
 
+  test('should add number of years from anchor year to dateValue', () => {
+    let date = new Date(6, 18, 1802);
+    expect(date.adjuster()).toEqual(2);
+  });
+  
+  test('should add number of years from anchor year to dateValue', () => {
+    let date = new Date(6, 18, 1802);
+    expect(date.findWeekdayName()).toEqual("Friday");
+  });
+    
+  test('is any given year a leap year', () => {
+    let date = new Date(6, 18, 1804);
+    expect(date.leapYearAdjust()).toBe(true);
+  });
 });
-
